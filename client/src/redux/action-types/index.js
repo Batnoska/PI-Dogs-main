@@ -1,0 +1,15 @@
+export const GET_ALL_DOGS = "GET_ALL_DOGS"; // trae todos los perros
+export const GET_DESCRIPTION = "GET_DESCRIPTION"; // trae la descripcion
+export const GET_DOGS_FOR_NAME = "GET_DOGS_FOR_NAME"; // trae perros por nombre
+export const GET_ALL_TEMPERAMENT = "GET_ALL_TEMPERAMENT"; // trae todos los temperamentos
+export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT"; // filtra por el temperamento
+export const ORDER_BY_NAME = "ORDER_BY_NAME"; // ordena por nombre
+export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT"; // ordena por peso
+export const FILTER_CREATED = "FILTER_CREATED"; // filtra por origen
+export const GET_CLEAN = "GET_CLEAN"; // get clean
+export const POST_DOG = "POST_DOG"; // post dog
+export const SET_LOADING = "SET_LOADING"; // loading
+export const ERROR = "ERROR"; // error
+export const DELETE_DOG = "DELETE_DOG"; // delete
+export const ADD_FAV = "ADD_FAV"; // add fav
+export const DELETE_FAV = "DELETE_FAV"; // delete fav
