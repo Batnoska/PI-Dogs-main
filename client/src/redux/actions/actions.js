@@ -22,7 +22,7 @@ import axios from "axios";
 export const getAllDogs = () => {
     //obtener todos los perros en /dogs por medio de un get
     return (dispatch) => {
-        axios.get("/dogs") //trae todos los perros
+        axios.get("http://localhost:3001/dogs") //trae todos los perros
         .then(response => {
             dispatch({
                 type: GET_ALL_DOGS,
@@ -53,7 +53,7 @@ export const getAllDogs = () => {
 export const getAllTemperament = () => {
     //Obtengo todos los temepramentos de mi back
     return (dispatch) => {
-        axios.get("/temperaments") //trae todos los temperamentos
+        axios.get("http://localhost:3001/temperaments") //trae todos los temperamentos
         .then(response => { //mapeo todos los datos de la api
             dispatch({
                 type: GET_ALL_TEMPERAMENT,
@@ -67,7 +67,7 @@ export const getDescription = (id) => {
     //Enviar el id al reducer para crear la seccion de Description
     return async function (dispatch) {
         try {
-            const json = await axios.get(`/dogs/${id}`);
+            const json = await axios.get(`http://localhost:3001/dogs/${id}`);
             return dispatch ({
                 type: GET_DESCRIPTION,
                 payload: json.data
@@ -95,7 +95,7 @@ export const getDogsForName = (name) => {
 export const postDog = (data) => {
     return async function (dispatch) {
         try {
-            const res = await axios.post("/dogs", data);
+            const res = await axios.post("http://localhost:3001/dogs", data);
             return res;
         } catch (error) {
             return dispatch ({
@@ -108,7 +108,7 @@ export const postDog = (data) => {
 export const deleteDog = (id) => {
     return async function (dispatch) {
         try {
-            await axios.delete(`/deleted/${id}`);
+            await axios.delete(`http://localhost:3001/deleted/${id}`);
             return dispatch({
                 type: DELETE_DOG,
             });
