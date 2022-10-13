@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Slider from "../Slider/Slider";
-import styles from "./landingPage.module.css";
+import styles from "./LandingPage.module.css";
 
 function LandingPage() {
     return (

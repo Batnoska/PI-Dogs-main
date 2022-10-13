@@ -189,7 +189,7 @@ router.get("/dogs/:id", async(req, res, next) => {
 })
 
 router.delete("/deleted/:id", async (req, res, next) => {
-    const {id} = req.params;
+    const {id} = req.params.id;
     try {
         const dog = await Dog.findByPk(id);
         if (!dog) {
