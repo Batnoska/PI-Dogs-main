@@ -107,6 +107,26 @@ router.get("/dogs", async (req, res) => {
     }
 })
 
+router.get("/weights", async (req, res) => {
+    let order = req.query.order
+    let dogTotales = await getAllDogs()
+    if (order === "menor a mayor") {
+        var dogOrdenados = await dogTotales.sort((a, b) => {
+            if(a.weightMin < b.weightMin) return -1;
+            if(a.weightMin > b.weightMin) return 1;
+            return 0;
+        })
+    } else if (order === "mayor a menor") {
+        var dogOrdenados = await dogTotales.sort((a, b) => {
+            if(a.weightMin > b.weightMin) return -1;
+            if(a.weightMin < b.weightMin) return 1;
+            return 0;
+        })
+    }
+
+    res.status(200).send(dogOrdenados)
+})
+
 router.get("/temperaments", async(req, res) => {
     const tempApi = await axios(api);
     const tempDB = tempApi.data
